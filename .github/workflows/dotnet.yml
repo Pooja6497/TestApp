@@ -31,9 +31,10 @@ jobs:
       - name: Publish project
         run: dotnet publish -c Release -o ./publish
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
         with:
-          name: aspnetcore-build
-          path: ./publish
+         name: aspnetcore-build
+         path: ./downloaded
+
    
